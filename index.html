@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- CO-1: HTML Structure & Internet Concepts -->
+<title>Secure Password Reset Using Email</title>
+
+<!-- CO-1: Meta tag used for SEO and webpage description -->
+<meta name="description" content="Secure Password Reset System">
+
+<!-- CO-1: Linking external CSS file -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- CO-1: Basic HTML heading structure -->
+<h1>Secure Password Reset Using Gmail</h1>
+
+<!-- CO-2: Navigation buttons used for page interaction -->
+<div id="homePage">
+
+<button onclick="showCreate()">Create Account</button>
+
+<button onclick="showReset()">Reset Password</button>
+
+<button onclick="showAccountsPage()">Registered Accounts</button>
+
+</div>
+
+<!-- CO-2: Form implementation for user registration -->
+<div id="createPage" class="hidden">
+
+<h2>Create Account</h2>
+
+<form id="createForm">
+
+<!-- CO-2: Email input validation using HTML5 -->
+<input type="email" id="newEmail" placeholder="Enter Gmail" required>
+
+<!-- CO-2: Password field with JavaScript event -->
+<input type="password" id="newPassword" placeholder="Create Password" required onkeyup="checkStrength()">
+
+<!-- CO-2: Semantic list explaining password rules -->
+<p><b>Password must contain:</b></p>
+<ul id="rules">
+<li>Minimum 6 characters</li>
+<li>At least 1 uppercase letter (A-Z)</li>
+<li>At least 1 number (0-9)</li>
+</ul>
+
+<p id="strength"></p>
+
+<button type="button" onclick="togglePassword()">Show Password</button>
+
+<button type="submit">Create Account</button>
+
+</form>
+
+<button type="button" onclick="goHome()">Back</button>
+
+</div>
+
+<!-- CO-2: Reset Password Form -->
+<div id="resetPage" class="hidden">
+
+<h2>Reset Password</h2>
+
+<form id="resetForm">
+
+<input type="email" id="resetEmail" placeholder="Enter Registered Gmail" required>
+
+<button type="submit">Send OTP</button>
+
+</form>
+
+<!-- CO-4: DOM controlled OTP verification section -->
+<div id="otpSection" style="display:none">
+
+<input type="text" id="userOTP" placeholder="Enter OTP">
+
+<button type="button" onclick="verifyOTP()">Verify OTP</button>
+
+</div>
+
+<!-- CO-4: DOM manipulation used to show new password section -->
+<div id="newPasswordSection" style="display:none">
+
+<input type="password" id="resetNewPassword" placeholder="Enter New Password">
+
+<button type="button" onclick="updatePassword()">Update Password</button>
+
+</div>
+
+<button type="button" onclick="goHome()">Back</button>
+
+</div>
+
+<!-- CO-3 & CO-4: Displaying stored accounts dynamically -->
+<div id="accountsPage" class="hidden">
+
+<h2>Registered Gmail Accounts</h2>
+
+<div id="accountList"></div>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+</div>
+
+<!-- CO-1: External JavaScript file connection -->
+<script src="script.js"></script>
+
+</body>
+</html>
